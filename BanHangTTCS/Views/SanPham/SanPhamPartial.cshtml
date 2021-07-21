@@ -1,0 +1,18 @@
+﻿@using BanHangTTCS.Models;
+@model IEnumerable<SanPham>
+
+<div class="product">
+    @foreach (var item in Model)
+    {
+        <div class="product__item">
+            <a href="@Url.RouteUrl("XemChiTiet", new { @id = item.MaSP , @bidanh = item.BiDanh })" target="blank"><img src="@Url.Content("~/Content/image/product/"+item.HinhAnh)"></a>
+            <div class="product__item-txt">
+                <p>@item.Mota</p>
+                <a href="" target="_blank">@item.TenSP</a>
+                <p>@item.DonGia</p>
+                <a href="@Url.Action("AddCart","GioHang", new { @MaSP = item.MaSP, @strURL = Request.Url.ToString() })">Them vao gio hang</a>
+            </div>
+        </div>
+    }
+
+</div>

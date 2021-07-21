@@ -1,0 +1,97 @@
+﻿@using BanHangTTCS.Models;
+@model SanPham
+@{
+    ViewBag.Title = "XemChiTiet";
+    Layout = "~/Views/Layout/ProductLayout.cshtml";
+}
+
+<div class="product__detail">
+    <div>
+        <div class="product__detail-thumb">
+            <img src="@Url.Content("~/Content/image/product/" + Model.HinhAnh)" alt="">
+        </div>
+        <div class="product__detail-img">
+            <div>
+                <img src="@Url.Content("~/Content/image/product/" + Model.HinhAnh1)" alt="">
+            </div>
+            <div>
+                <img src="@Url.Content("~/Content/image/product/" + Model.HinhAnh2)" alt="">
+            </div>
+            <div>
+                <img src="@Url.Content("~/Content/image/product/" + Model.HinhAnh3)" alt="">
+            </div>
+            <div>
+                <img src="@Url.Content("~/Content/image/product/" + Model.HinhAnh4)" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="product__detail-right">
+        <div class="detail-right__title">
+            <p>@Model.TenSP</p>
+        </div>
+        <div>
+            <p>đánh giá</p>
+            <p>Lượt Xem : @Model.LuotXem</p>
+        </div>
+        <div>
+            <p> Giá Tiền : @Model.DonGia.Value.ToString("#,##") VNĐ</p>
+        </div>
+        <hr>
+        <div>
+            <p>@Model.ChiTiet</p>
+        </div>
+        <div class="detail-right__select">
+            <div>
+                <div>
+                    <p>Color</p>
+                </div>
+                <div>
+                    <p>size</p>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <select name="" id="">
+                        <option>Silver</option>
+                        <option>Silver</option>
+                        <option>Black</option>
+                        <option>Dark Black</option>
+                        <option>Red</option>
+                    </select>
+                </div>
+                <div>
+                    <select name="" id="">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>Red</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div>
+            <p>số lượng còn lại : @Model.SoluongTon</p>
+        </div>
+        <div>
+            <button>Thêm vào giỏ hàng</button>
+        </div>
+    </div>
+    <div>
+
+    </div>
+</div>
+<div class="comment">
+    <div>
+        <p>Bình luận</p>
+        <div>
+            <div>
+                <p>
+                    tên thành viên
+                </p>
+                <p>nội dung đánh giá</p>
+            </div>
+
+        </div>
+    </div>
+</div>
+

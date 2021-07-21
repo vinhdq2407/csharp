@@ -1,0 +1,60 @@
+﻿@using BanHangTTCS.Models;
+@model ThanhVien
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> ĐĂNG KÝ</title>
+    <link rel="stylesheet" type="text/css" href="~/Content/css/dangnhap2.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/fontawesome/css/all.css">
+</head>
+
+<body>
+
+    <div class="logo">
+        <a href=""><img src="image/logo/xxx.png"></a>
+    </div>
+
+    <div class="content">
+        <p>ĐĂNG KÝ</p>
+        <div class="content__form">
+            <form action="" method="POST">
+                <div class="content__title">
+                    @*<input type="text" placeholder="Tên tài khoản" name="TaiKhoan" id="TaiKhoan" >*@
+                    @Html.TextBoxFor(model=>model.TaiKhoan)
+                    <p style="font-size:15px">@Html.ValidationMessageFor(model => model.TaiKhoan)</p>
+                    <input type="password" placeholder="Mật khẩu" name="MatKhau" id="MatKhau" >
+                    <br>
+                </div>
+                <div class="content__title">
+                    <input type="text" placeholder="Họ tên" name="HoTen" >
+                    <input type="text" placeholder="Số điện thoại" name="SoDT" ><br>
+                </div>
+                <div class="content__title">
+                    <input type="text" placeholder="Địa Chỉ" name="DiaChi">
+                    <input type="text" placeholder="Câu Hỏi" name="CauHoi"><br />
+                </div>
+                <div class="content__title">
+                    <input type="text" placeholder="Email" name="Email" >
+                    <input type="text" placeholder="Câu trả lời" name="CauTraLoi" ><br>
+                </div>
+
+
+                <div class="content__form-button">
+                    <input type="submit" value="Đăng Ký"><br>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+</body>

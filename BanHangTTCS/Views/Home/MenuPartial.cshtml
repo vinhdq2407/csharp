@@ -1,0 +1,78 @@
+﻿
+@using BanHangTTCS.Models
+@model IEnumerable<SanPham>
+
+<div>
+    <ul class="nav">
+        <li>
+            <a class="nav__title">
+
+                <img src="~/Content/image/logo/xxx.png" alt="">
+            </a>
+        </li>
+        <li><a class="nav__title" href="@Url.Action("Index","Home")">TRANG CHỦ</a></li>
+        @foreach (var groupItem in Model.GroupBy(n => n.LoaiSanPham))
+        {
+            if (groupItem.Key != null)
+            {
+
+                <li>
+                    <a class="nav__title" href="@Url.Action("SanPham","SanPham",new { @MaLoaiSP = groupItem.Key.MaLoaiSP })">@groupItem.Key.TenLoai</a>
+                    <ul>
+                        @foreach (var item in groupItem.GroupBy(n => n.NhaSanXuat))
+                        {
+                            if (item.Key != null)
+                            {
+                                <li>
+                                    <a href="@Url.Action("SanPham","SanPham",new { @MaLoaiSP=groupItem.Key.MaLoaiSP,@MaNSX=item.Key.MaNSX})">@item.Key.TenNSX</a>
+                                    <ul class="ul__2">
+                                        @foreach (var item2 in groupItem.GroupBy(n => n.NhaCungCap))
+                                        {
+                                            if (item2.Key != null)
+                                            {
+
+                                                <li><a href="#">@item2.Key.TenNCC</a></li>
+                                            }
+                                        }
+                                    </ul>
+                                </li>
+                            }
+                        }
+
+                    </ul>
+                </li>
+            }
+        }
+
+        <li><a class="nav__title" href="#">liên hệ</a></li>
+        <li><a class="nav__title" href="#">tất cả sản phẩm</a></li>
+    </ul>
+</div>
+<div>
+    <div class="nav__menu-right">
+        <div class="menu-right__item">
+            <input type="text" name="" id="" placeholder="Tìm Kiếm">
+        </div>
+
+        @if (Session["TaiKhoan"] != null)
+        {
+            ThanhVien tv = (ThanhVien)Session["TaiKhoan"];
+            <div class="menu-right__item">
+                <button>Chào : @tv.HoTen</button>
+            </div>
+            <div class="menu-right__item">
+
+                @Html.ActionLink("Đăng Xuất", "DangXuat", "Home")
+            </div>
+
+        }
+        else
+        {
+            <div class="menu-right__item">
+                <a href="@Url.Action("viewDN","Home")">Đăng Nhập</a>
+            </div>
+        }
+        @Html.Action("GioHangPartial", "GioHang")
+
+    </div>
+</div>

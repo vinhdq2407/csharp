@@ -1,0 +1,108 @@
+﻿@using BanHangTTCS.Models;
+@model SanPham
+
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="~/Content/css/style1.css">
+    <title> Bán Hàng </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/fontawesome/css/all.css">
+
+</head>
+
+<body>
+    <div class="nav__menu">
+        @Html.Action("MenuPartial", "Home")
+        
+    </div>
+    <!-- anh page -->
+    <!--<div class="img__page">
+        <img src="~/Content/image/trangchu.jpg">
+    </div>-->
+
+    <!-- slide -->
+    <!--<div class="slide">
+        <input type="radio" checked="checked" name="sliderimg" id="img1">
+        <div>
+            <label for="img4"><img src="~/Content/image/button/left.png" id="nutleft"></label>
+            <a href=""><img src="~/Content/image/slide/slide1.jpg"></a>
+            <label for="img2"><img src="~/Content/image/button/right.png" id="nutright"></label>
+        </div>
+        <input type="radio" name="sliderimg" id="img2">
+        <div>
+            <label for="img1"><img src="~/Content/image/button/left.png" id="nutleft"></label>
+            <img src="~/Content/image/slide/slide2.jpg">
+            <label for="img3"><img src="~/Content/image/button/right.png" id="nutright"></label>
+        </div>
+        <input type="radio" name="sliderimg" id="img3">
+        <div>
+            <label for="img2"><img src="~/Content/image/button/left.png" id="nutleft"></label>
+            <img src="~/Content/image/slide/slide3.jpg">
+            <label for="img4"><img src="~/Content/image/button/right.png" id="nutright"></label>
+        </div>
+        <input type="radio" name="sliderimg" id="img4">
+        <div>
+            <label for="img3"><img src="~/Content/image/button/left.png" id="nutleft"></label>
+            <img src="~/Content/image/slide/slide2.jpg">
+            <label for="img1"><img src="~/Content/image/button/right.png" id="nutright"></label>
+        </div>
+    </div>-->
+
+    <!-- san pham moi -->
+
+    @RenderBody()
+
+
+    
+
+    <!-- footer -->
+    <footer>
+        <div id="footer">
+            <ul>
+                <li class="folilogo">
+                    <div class="fologo">
+                        <img src="~/Content/image/logo/xxx.png" style="width: 120px; padding-top: 15px;">
+                    </div>
+                </li>
+                <li class="footerll">
+                    <ul class="listll">
+                        <li class="lifooter">
+                            <p>Thông tin liên lạc</p>
+                        </li>
+                        <li class="lifooter">
+                            <p>Số điện thoại : 0123456789</p>
+                        </li>
+                        <li class="lifooter">
+                            <p>Email : 5Theway@gmail.com</p>
+                        </li>
+                        <li class="lifooter">
+                            <p>Địa chỉ : số 182,Lê Duẩn,TP Vinh</p>
+                        </li>
+                    </ul>
+                </li>
+                <li class="footerll">
+                    <ul class="listll">
+                        <li class="lifooter">
+                            <p>Hỗ Trợ Khách Hàng</p>
+                        </li>
+                        <li class="lifooter">
+                            <p>Facebook: 5Theway</p>
+                        </li>
+                        <li class="lifooter">
+                            <p>Instagram : 5thewayvietnam</p>
+                        </li>
+                        <li class="lifooter">
+                            <p>SDT: 0123456789 </p>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </footer>
+
+
+
+</body>

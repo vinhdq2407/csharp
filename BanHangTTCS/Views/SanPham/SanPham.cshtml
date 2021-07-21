@@ -1,0 +1,26 @@
+﻿@using BanHangTTCS.Models;
+@model IEnumerable<SanPham>
+@{
+    ViewBag.Title = "SanPham";
+    Layout = "~/Views/Layout/ProductLayout.cshtml";
+}
+<div class="list__product">
+</div>
+<!-- san pham moi -->
+<div class="product__title">
+    SẢN PHẨM MỚI
+</div>
+<div class="product">
+    @foreach (var item in Model.OrderBy(n => n.DonGia))
+    {
+
+        <div class="product__item">
+            <a href="@Url.RouteUrl("XemChiTiet", new { @id = item.MaSP , @bidanh = item.BiDanh })" target="_blank"><img src="@Url.Content("~/Content/image/product/"+item.HinhAnh)"></a>
+            <div class="product__item-txt">
+                <p>@item.Mota</p>
+                <a href="@Url.RouteUrl("XemChiTiet", new { @id = item.MaSP , @bidanh = item.BiDanh })" target="_blank">@item.TenSP</a>
+                <p>@item.DonGia.Value.ToString("#,##") VNĐ</p>
+            </div>
+        </div>
+    }
+</div>

@@ -1,0 +1,112 @@
+﻿@using BanHangTTCS.Models;
+@model List<ItemGioHang>
+
+@{
+    ViewBag.Title = "XemGioHang";
+    Layout = "~/Views/Layout/ProductLayout.cshtml";
+}
+
+@if (Model.Count == null)
+{
+
+
+    <h1> gio hang rong</h1>
+}
+else
+{
+    <div class="cart__title">
+        <div>
+
+            <p>Giỏ Hàng Của Bạn (@ViewBag.TongSoLuong) </p>
+        </div>
+        <div>
+            <button>Tiếp tục mua sắm</button>
+        </div>
+    </div>
+    <div class="cart">
+        <div>
+            @foreach (var item in Model)
+            {
+
+                <div class="cart__item">
+                    <div class="cart__item-detail">
+                        <div class="item-detail__img">
+                            <img src="@Url.Content("~/Content/image/product/"+item.HinhAnh)" alt="">
+                        </div>
+                        <div class="item__detail-info">
+                            <div class="detail-info__list">
+                                <div>
+                                    <p>Tên Sản Phẩm : @item.TenSP</p>
+                                </div>
+                                <div>
+                                    <p>Mã Sản Phẩm : @item.MaSP</p>
+                                </div>
+                                <div>
+                                    <p>Đơn Giá : @item.DonGia</p>
+                                </div>
+                                <div>
+                                    <p>Số Lượng : @item.SoLuong</p>
+                                </div>
+                                <div>
+                                    <p>Thanh tien : @item.ThanhTien.ToString("#,##")</p>
+                                </div>
+                            </div>
+                            <div class="detail-info__action">
+                                <div>
+                                    <button>Xoá</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart__item">
+                    <p>
+                        @Html.ActionLink("sua gio hang", "SuaGioHang", new { @MaSP = item.MaSP })
+                    </p>
+                </div>
+            }
+        </div>
+        <div>
+            <div class="cart__price">
+                <p class="cart__price-title">CHI TIẾT GIỎ HÀNG</p>
+                <div class="cart__price-detail">
+                    <div>
+                        <p>Tổng Các Sản Phẩm : </p>
+                        <p>Giảm Giá : </p>
+                        <p>Phí Vận Chuyển : </p>
+                    </div>
+                    <div>
+                        <p>()</p>
+                        <p>()</p>
+                        <p>()</p>
+                    </div>
+                </div>
+                <hr>
+                <div class="price-total">
+                    <p>Tổng : </p>
+                    <p>()</p>
+                </div>
+                <div class="cart__price-discount">
+                    <p class="price-discount__title">Mã Giảm Giá</p>
+                    <div class="price-discount">
+                        <div>
+                            <p class="price-discount__display">Hiển thị mã giảm giá</p>
+                        </div>
+                        <div>
+                            <button>Áp Mã Giảm Giá</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart__price-button">
+                    <button>Đặt Hàng</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+}
+
+
+
+
+

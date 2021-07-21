@@ -1,0 +1,32 @@
+﻿@using BanHangTTCS.Models;
+@model IEnumerable<SanPham>
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Layout/Layout.cshtml";
+}
+
+@{
+    IEnumerable<SanPham> listGiayMoi = ViewBag.listGiayMoi as IEnumerable<SanPham>;
+    IEnumerable<SanPham> listAoMoi = ViewBag.listAoMoi as IEnumerable<SanPham>;
+    IEnumerable<SanPham> listTuiMoi = ViewBag.listTuiMoi as IEnumerable<SanPham>;
+}
+<div>
+    <div class="product__title">
+        SẢN PHẨM MỚI
+    </div>
+    @Html.Partial("~/Views/SanPham/SanPhamPartial.cshtml",listAoMoi),
+</div>
+<div>
+    <div class="product__title">
+        SẢN PHẨM MỚI
+    </div>
+    @Html.Partial("~/Views/SanPham/SanPhamPartial.cshtml", listAoMoi),
+</div>
+<div>
+    <div class="product__title">
+        SẢN PHẨM MỚI
+    </div>
+    @Html.Partial("~/Views/SanPham/SanPhamPartial.cshtml", listAoMoi),
+</div>

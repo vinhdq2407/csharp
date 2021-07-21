@@ -1,0 +1,54 @@
+﻿@using BanHangTTCS.Models;
+@model SanPham
+@{SanPham notif = ViewBag.notif as SanPham; }
+
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> ĐĂNG NHẬP</title>
+    <link rel="stylesheet" type="text/css" href="~/Content/css/dangnhap2.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/fontawesome/css/all.css">
+</head>
+
+<body>
+
+    <div class="logo">
+        <a href="" style="background: none;"><img src="~/Content/image/logo/xxx.png"></a>
+    </div>
+
+    <div class="content">
+        <p>ĐĂNG NHẬP</p>
+
+        <div class="content__form">
+            @using (Html.BeginForm("DangNhap", "Home"))
+            {
+
+                <div class="content__title">
+                    <label for="uname">TÊN TÀI KHOẢN</label>
+                    <input type="text" placeholder="Enter Username" name="txtTenDN"><br>
+                </div>
+                <div class="content__title">
+                    <label for="psw">MẬT KHẨU</label>
+                    <input type="password" placeholder="Enter Password" name="txtPass"><br>
+                </div>
+                <div class="content__form-button">
+                    <input type="submit" value="Đăng Nhập"><br>
+                </div>
+                <div class="content__form-link">
+                    <span><a href="">@ViewBag.Fail</a></span>
+                </div>
+                <div class="content__form-link">
+                    <span><a href="">Tạo tài khoản</a></span>
+                </div>
+
+            }
+        </div>
+    </div>
+
+</body>
